@@ -11,6 +11,12 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+// $router->get('/', function () use ($router) {
+//     return $router->app->version();
+// });
+
+$router->get('/', function () {
+    $client = new App\Nasa\Client(new GuzzleHttp\Client);
+
+    return response()->json($client->fetch()->data);
 });
