@@ -34,18 +34,18 @@ class Client
             if (count($item) < 2) return [];
 
             $item = [
-                'latitude' => $item[0],
-                'longitude' => $item[1],
-                'brightness' => $item[2],
-                'scan' => $item[3],
-                'track' => $item[4],
+                'latitude' => floatval($item[0]),
+                'longitude' => floatval($item[1]),
+                'brightness' => floatval($item[2]),
+                'scan' => floatval($item[3]),
+                'track' => floatval($item[4]),
                 'acq_date' => $item[5],
                 'acq_time' => $item[6],
                 'satellite' => $item[7],
-                'confidence' => $item[8],
+                'confidence' => intval($item[8]),
                 'version' => $item[9],
-                'bright_t31' => $item[10],
-                'frp' => $item[11],
+                'bright_t31' => floatval($item[10]),
+                'frp' => floatval($item[11]),
                 'daynight' => $item[12],
             ];
 
