@@ -18,5 +18,5 @@
 $router->get('/', function () {
     $client = new App\Nasa\Client(new GuzzleHttp\Client);
 
-    return response()->json($client->fetch()->data->take(7));
+    return response()->json($client->fetch()->data->take(25));
 });
